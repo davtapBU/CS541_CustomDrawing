@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E76F517B2704A61E00AB1532 /* ShapeParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F517A2704A61E00AB1532 /* ShapeParameters.swift */; };
+		E76F517D2704A6E200AB1532 /* ShapeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F517C2704A6E200AB1532 /* ShapeBackground.swift */; };
 		E7968076270206F300BB0256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7968075270206F300BB0256 /* AppDelegate.swift */; };
 		E7968078270206F300BB0256 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7968077270206F300BB0256 /* SceneDelegate.swift */; };
 		E796807A270206F300BB0256 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7968079270206F300BB0256 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E76F517A2704A61E00AB1532 /* ShapeParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeParameters.swift; sourceTree = "<group>"; };
+		E76F517C2704A6E200AB1532 /* ShapeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBackground.swift; sourceTree = "<group>"; };
 		E7968072270206F300BB0256 /* CustomDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7968075270206F300BB0256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7968077270206F300BB0256 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				E7968077270206F300BB0256 /* SceneDelegate.swift */,
 				E7968079270206F300BB0256 /* ViewController.swift */,
 				E796807B270206F300BB0256 /* Main.storyboard */,
+				E76F517A2704A61E00AB1532 /* ShapeParameters.swift */,
+				E76F517C2704A6E200AB1532 /* ShapeBackground.swift */,
 				E796807E270206F600BB0256 /* Assets.xcassets */,
 				E7968080270206F600BB0256 /* LaunchScreen.storyboard */,
 				E7968083270206F600BB0256 /* Info.plist */,
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E796807A270206F300BB0256 /* ViewController.swift in Sources */,
+				E76F517D2704A6E200AB1532 /* ShapeBackground.swift in Sources */,
+				E76F517B2704A61E00AB1532 /* ShapeParameters.swift in Sources */,
 				E7968076270206F300BB0256 /* AppDelegate.swift in Sources */,
 				E7968078270206F300BB0256 /* SceneDelegate.swift in Sources */,
 			);
