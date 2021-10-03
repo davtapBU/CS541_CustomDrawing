@@ -8,16 +8,31 @@ import SwiftUI
 
 
 struct ShapeBackground: View {
+    @State private var dragAmount = CGSize.zero
+    
+    private var gradientStart = Color(red: 0.0 / 255, green: 210.0 / 255, blue: 120.0 / 255)
+    private var gradientEnd = Color(red: 120.0 / 255, green: 125.0 / 255, blue: 210.0 / 255)
+
     var body: some View {
+        //Wrap shape in a geometry reader to be able to adapt to our screen size/aspect ratio
         GeometryReader{ geometry in
             Path { path in
+                //Take the minimum of the width and height of our current geometry for both.
                 var width: CGFloat = min(geometry.size.width, geometry.size.height)
-                let height = width
-                let xScale: CGFloat = 0.900
-                let yScale: CGFloat = 0.500
+                var height = width
+                //Can change the x and y scale of the shape with these two constants
+                let xScale: CGFloat = 0.80
+                let yScale: CGFloat = 0.90
+                
+                //Calculating offset from top/bottom and for curves based on geometry dimensions and chosen scale
                 let xOffset = (width * (1.0 - xScale)) / 2.0
                 let yOffset = (height * (1.0 - yScale)) / 2.0
+                
+                //Matching the width and height to the chosen scale
                 width *= xScale
+                height *= yScale
+                
+                
                 path.move(
                     to: CGPoint(
                         x: width * 0.95 + xOffset,
@@ -46,14 +61,25 @@ struct ShapeBackground: View {
                 }
             }
             .fill(LinearGradient(
-                gradient: Gradient(colors: [Self.gradientStart, Self.gradientEnd]),
+                gradient: Gradient(colors: [gradientStart, gradientEnd]),
                 startPoint: UnitPoint(x: 0.5, y: 0),
                 endPoint: UnitPoint(x: 0.5, y: 0.6)
             ))
+            .gesture(
+                DragGesture()
+                    .onChanged { self.dragAmount = $0.translation }
+                    .onEnded { _ in self.dragAmount = .zero }
+            )
+            .animation(.spring())
+            .offset(dragAmount)
         }
     }
-    static let gradientStart = Color(red: 0.0 / 255, green: 210.0 / 255, blue: 120.0 / 255)
-    static let gradientEnd = Color(red: 120.0 / 255, green: 125.0 / 255, blue: 210.0 / 255)
+    
+    mutating func changeGradient(gradStart: Color, gradEnd: Color) {
+        gradientStart = gradStart
+        gradientEnd = gradEnd
+    }
+    
 }
 
 

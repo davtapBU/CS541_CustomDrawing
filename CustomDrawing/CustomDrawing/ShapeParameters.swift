@@ -6,7 +6,7 @@
 //
 
 import CoreGraphics
-
+import SwiftUI
 
 struct ShapeParameters {
     struct Segment {
@@ -15,7 +15,7 @@ struct ShapeParameters {
         let control: CGPoint
     }
     
-    static let adjustment: CGFloat = 0.1
+    static let adjustment: CGFloat = 0.085
 
     static let segments = [
         Segment(
