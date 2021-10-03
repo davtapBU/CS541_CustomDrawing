@@ -74,6 +74,12 @@ struct ShapeBackground: View {
             .offset(dragAmount)
         }
     }
+    
+    mutating func changeGradient(gradStart: Color, gradEnd: Color) {
+        gradientStart = gradStart
+        gradientEnd = gradEnd
+    }
+    
 }
 
 
